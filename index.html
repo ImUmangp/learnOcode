@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Learn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section>
+   <img src="Img/new.jpg">
+</section>   
+
+<div class="keyboard">
+<div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">Apple</span>
+    </div>
+    <div data-key="66" class="key">
+        <kbd>B</kbd>
+        <span class="sound">BaseBall</span>
+      </div>
+      <div data-key="67" class="key">
+        <kbd>C</kbd>
+        <span class="sound">Clock</span>
+      </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">Donkey</span>
+    </div>
+    <div data-key="69" class="key">
+        <kbd>E</kbd>
+        <span class="sound">Elephant</span>
+      </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">Father</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">GrandMother</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">Hungry</span>
+    </div>
+    <div data-key="73" class="key">
+        <kbd>I</kbd>
+        <span class="sound">Internet</span>
+      </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">Justice</span>
+    </div>
+</div>
+
+<div class="keys">
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">Kangaroo</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">London</span>
+    </div> 
+     <div data-key="77" class="key">
+        <kbd>M</kbd>
+        <span class="sound">Monkey</span>
+      </div>
+      <div data-key="78" class="key">
+        <kbd>N</kbd>
+        <span class="sound">Norway</span>
+      </div>
+      <div data-key="79" class="key">
+        <kbd>O</kbd>
+        <span class="sound">OverTime</span>
+      </div>
+      <div data-key="80" class="key">
+        <kbd>P</kbd>
+        <span class="sound">Pillow</span>
+      </div>
+      <div data-key="81" class="key">
+        <kbd>Q</kbd>
+        <span class="sound">Question</span>
+      </div>
+      <div data-key="82" class="key">
+        <kbd>R</kbd>
+        <span class="sound">Rabbit</span>
+      </div>
+</div>
+<div class="keys">
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">SuperMan</span>
+      </div>
+      <div data-key="84" class="key">
+        <kbd>T</kbd>
+        <span class="sound">Telephone</span>
+      </div>
+      <div data-key="85" class="key">
+        <kbd>U</kbd>
+        <span class="sound">Underwear</span>
+      </div>
+      <div data-key="86" class="key">
+        <kbd>V</kbd>
+        <span class="sound">Vacinate</span>
+      </div>
+      <div data-key="87" class="key">
+        <kbd>W</kbd>
+        <span class="sound">WWW</span>
+      </div>
+</div>     
+<div class="keys">
+      <div data-key="88" class="key">
+        <kbd>X</kbd>
+        <span class="sound">Xylophone</span>
+      </div>
+      <div data-key="89" class="key">
+        <kbd>Y</kbd>
+        <span class="sound">Yoghurt</span>
+      </div>
+      <div data-key="90" class="key">
+        <kbd>Z</kbd>
+        <span class="sound">Zebra</span>
+      </div>
+</div>
+</div>
+
+  <audio data-key="65" src="sounds/a.mp3"></audio>
+  <audio data-key="66" src="sounds/b.mp3"></audio>
+  <audio data-key="67" src="sounds/c.mp3"></audio>
+  <audio data-key="68" src="sounds/d.mp3"></audio>
+  <audio data-key="69" src="sounds/e.mp3"></audio>
+  <audio data-key="70" src="sounds/f.mp3"></audio>
+  <audio data-key="71" src="sounds/g.mp3"></audio>
+  <audio data-key="72" src="sounds/h.mp3"></audio>
+  <audio data-key="73" src="sounds/i.mp3"></audio>
+  <audio data-key="74" src="sounds/j.mp3"></audio>
+  <audio data-key="75" src="sounds/k.mp3"></audio>
+  <audio data-key="76" src="sounds/l.mp3"></audio>
+  <audio data-key="77" src="sounds/m.mp3"></audio>
+  <audio data-key="78" src="sounds/n.mp3"></audio>
+  <audio data-key="79" src="sounds/o.mp3"></audio>
+  <audio data-key="80" src="sounds/p.mp3"></audio>
+  <audio data-key="81" src="sounds/q.mp3"></audio>
+  <audio data-key="82" src="sounds/r.mp3"></audio>
+  <audio data-key="83" src="sounds/s.mp3"></audio>
+  <audio data-key="84" src="sounds/t.mp3"></audio>
+  <audio data-key="85" src="sounds/u.mp3"></audio>
+  <audio data-key="86" src="sounds/v.mp3"></audio>
+  <audio data-key="87" src="sounds/w.mp3"></audio>
+  <audio data-key="88" src="sounds/x.mp3"></audio>
+  <audio data-key="89" src="sounds/y.mp3"></audio>
+  <audio data-key="90" src="sounds/z.mp3"></audio>
+
+<script>
+ function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+</script>
+
+
+</body>
+</html>
